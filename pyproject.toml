@@ -1,0 +1,12 @@
+[tool.pytest.ini_options]
+pythonpath = ["apps/api", "services/ai/src"]
+testpaths = ["apps/api/tests", "services/ai/tests"]
+addopts = "-q"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
+line_length = 100

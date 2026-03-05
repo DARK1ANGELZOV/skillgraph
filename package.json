@@ -1,0 +1,16 @@
+{
+  "name": "skillgraph-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/admin",
+    "apps/web"
+  ],
+  "scripts": {
+    "install:all": "npm install --workspaces",
+    "dev:admin": "npm --workspace apps/admin run dev",
+    "dev:web": "npm --workspace apps/web run dev",
+    "build": "npm --workspace apps/admin run build && npm --workspace apps/web run build",
+    "test:frontend": "npm --workspace apps/admin run test && npm --workspace apps/web run test"
+  }
+}

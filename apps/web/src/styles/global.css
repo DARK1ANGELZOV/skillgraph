@@ -1,0 +1,248 @@
+:root {
+  --font-heading: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "Manrope", "Segoe UI", sans-serif;
+  --bg: radial-gradient(circle at 10% 20%, #2f6ec6 0, transparent 35%),
+    radial-gradient(circle at 85% 15%, #51b4d0 0, transparent 35%),
+    linear-gradient(145deg, #081121, #112642 55%, #1b3960);
+  --surface: rgba(255, 255, 255, 0.12);
+  --surface-strong: rgba(255, 255, 255, 0.18);
+  --text: #f5fbff;
+  --muted: #c4d9ec;
+  --primary: #3cf6d3;
+  --border: rgba(255, 255, 255, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+}
+
+.candidate-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.hero-card,
+.panel {
+  width: min(820px, 100%);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  backdrop-filter: blur(16px);
+  border-radius: 18px;
+  padding: 1.4rem;
+  box-shadow: 0 22px 55px rgba(0, 5, 18, 0.3);
+  animation: fadeUp 360ms ease;
+}
+
+p {
+  color: var(--muted);
+}
+
+.token-form,
+.answer-form {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.info-grid article {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-strong);
+  padding: 0.8rem;
+}
+
+.info-grid h3 {
+  font-size: 1rem;
+}
+
+.info-grid p {
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+textarea {
+  min-height: 170px;
+  resize: vertical;
+}
+
+.primary-btn,
+.secondary-btn {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: #02231c;
+  font-weight: 700;
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  margin-bottom: 0.9rem;
+}
+
+.actions-row {
+  margin: 1rem 0;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.score-grid article {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  padding: 0.8rem;
+}
+
+.score-grid strong {
+  font-size: 1.5rem;
+}
+
+.error-box {
+  border: 1px solid rgba(255, 107, 107, 0.5);
+  background: rgba(255, 107, 107, 0.15);
+}
+
+.error-inline {
+  color: #ffd3d3;
+  font-size: 0.9rem;
+}
+
+.chip-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0.6rem 0 1rem;
+}
+
+.chip {
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.82rem;
+}
+
+.chip.warning {
+  border-color: rgba(255, 137, 107, 0.7);
+  color: #ffd4bf;
+}
+
+.speech-metrics {
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.test-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface-strong);
+  padding: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.test-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.test-question {
+  margin: 0.9rem 0;
+}
+
+.option-grid {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.option-grid label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .question-header {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .score-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}

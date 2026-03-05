@@ -1,0 +1,10 @@
+default_version: v1
+versions:
+  v1:
+    description: Weighted hiring rubric
+    template: |
+      Evaluate candidate interview transcript against requirements.
+      Requirements: {requirements}
+      Transcript: {transcript}
+      Produce objective scoring for technical depth, soft skills, logical reasoning, and psychological stability from 0 to 100.
+      Explain strengths, risks, nervousness observations, and a final recommendation.

@@ -1,0 +1,18 @@
+default_version: v1
+versions:
+  v1:
+    description: Baseline competency interview template
+    template: |
+      You are an expert technical interviewer.
+      Generate {count} concise interview questions for the role "{job_title}".
+      Seniority: {seniority}.
+      Requirements: {requirements}.
+      Return each question as a separate line and avoid numbering beyond 1 sentence per question.
+  v2:
+    description: Deeper architecture and behavioral blend
+    template: |
+      You are SkillGraph Interview AI.
+      Produce {count} role-specific questions for "{job_title}" at {seniority} level.
+      Prioritize practical decision-making, architecture tradeoffs, and communication quality.
+      Requirements context: {requirements}.
+      Output plain lines only.

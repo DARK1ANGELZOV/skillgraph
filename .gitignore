@@ -43,3 +43,16 @@ terraform.tfstate.backup
 # --- IDE ---
 .vscode/
 .idea/
+
+## Env
+.env
+# SkillGraph generated
+services/ai/.cache/
+services/ai/models/
+models/
+**/.pytest_cache/
+**/.mypy_cache/
+apps/admin/node_modules/
+apps/web/node_modules/
+apps/admin/dist/
+apps/web/dist/
